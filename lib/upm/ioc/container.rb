@@ -1,14 +1,19 @@
 # frozen_string_literal: true
 
-module Upm
-  class Container
-    def self.init
-      dependency_container = Dry::Container.new
-          .register(PROJECT_MANAGER_SERVICE, -> { ProjectManager.new })
-          .register(FILE_MANAGER_SERVICE, -> { FileManager.new })
+require "dry-container"
+require "dry-auto_inject"
 
-      #noinspection RubyDynamicConstAssignment
-      AutoInject = Dry::AutoInject(dependency_container)
-    end
+module Upm
+  container = Dry::Container.new
+  container.register(:context, -> { Context.new })
+  container.register(:project_manager, -> { ProjectManager.new })
+  container.register(:file_manager, -> { FileManager.new })
+  container.register(:template_writer, -> { TemplateWriter.new })
+  container.register(:assets, -> { Assets.new })
+
+  Dry::AutoInject = Dry::AutoInject(container)
+
+  def self.Inject(*keys)
+    Dry::AutoInject[*keys]
   end
 end

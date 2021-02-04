@@ -22,9 +22,20 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/res/project/Tests/Runtime" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="Errors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/res/project" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/res/project/Tests/Runtime" />
+      <recent name="$PROJECT_DIR$/res/project/Tests/Editor" />
+      <recent name="$PROJECT_DIR$/lib/upm/models" />
+      <recent name="$PROJECT_DIR$/lib/upm/services" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" RAKE_SPRING_PRE_LOADER_OPTION="true" RAILS_SPRING_PRE_LOADER_OPTION="true" />
@@ -36,7 +47,7 @@
       <option name="presentableId" value="Default" />
       <updated>1612406270911</updated>
       <workItem from="1612406271983" duration="29000" />
-      <workItem from="1612406313723" duration="3176000" />
+      <workItem from="1612406313723" duration="8426000" />
     </task>
     <servers />
   </component>
@@ -44,10 +55,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="445" y="541" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1612408624460">
+    <state x="445" y="541" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1612412993554">
       <screen x="35" y="23" width="2525" height="1417" />
     </state>
-    <state x="445" y="541" key="#com.intellij.fileTypes.FileTypeChooser/35.23.2525.1417@35.23.2525.1417" timestamp="1612408624460" />
+    <state x="445" y="541" key="#com.intellij.fileTypes.FileTypeChooser/35.23.2525.1417@35.23.2525.1417" timestamp="1612412993554" />
     <state x="457" y="474" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1612409518154">
       <screen x="35" y="23" width="2525" height="1417" />
     </state>
@@ -56,5 +67,13 @@
       <screen x="35" y="23" width="2525" height="1417" />
     </state>
     <state x="300" y="365" key="SettingsEditor/35.23.2525.1417@35.23.2525.1417" timestamp="1612409628430" />
+    <state x="420" y="475" width="598" height="490" key="find.popup" timestamp="1612413471321">
+      <screen x="35" y="23" width="2525" height="1417" />
+    </state>
+    <state x="420" y="475" width="598" height="490" key="find.popup/35.23.2525.1417@35.23.2525.1417" timestamp="1612413471321" />
+    <state x="384" y="350" width="670" height="676" key="search.everywhere.popup" timestamp="1612413675307">
+      <screen x="35" y="23" width="2525" height="1417" />
+    </state>
+    <state x="384" y="350" width="670" height="676" key="search.everywhere.popup/35.23.2525.1417@35.23.2525.1417" timestamp="1612413675307" />
   </component>
 </project>
