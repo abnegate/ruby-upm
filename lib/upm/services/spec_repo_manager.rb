@@ -129,14 +129,16 @@ module Upm
       case package_type
       when "unity"
         clone_to_project(url, version)
+      when "npm"
+        clone_to_project(url, version, "node_modules")
       else
         clone_to_project(url, version)
       end
     end
 
-    def clone_to_project(url, version)
+    def clone_to_project(url, version, path = ".")
       progress.start("Cloning package into project") do
-        result = system("git clone #{url} --branch=#{version} &> /dev/null")
+        result = system("git clone #{url} --branch=#{version} #{path} &> /dev/null")
         next Result.failure("Clone failure") unless result
         next Result.success
       end
