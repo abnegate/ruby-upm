@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-require FileUtils
+require "fileutils"
 
 module Upm
   class FileManager
-    def create_directory(root, directory_name)
-      Dir.chdir(root) do
+    def create_directory(path, directory_name)
+      Dir.chdir(path) do
         FileUtils.mkdir_p(directory_name)
       end
     end

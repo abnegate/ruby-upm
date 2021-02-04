@@ -6,9 +6,9 @@ module Upm
       :root_path,
       :company_name
 
-    def initialize(name, project_path, company_name)
-      @name = name
+    def initialize(project_path, name, company_name)
       @root_path = project_path
+      @name = name
       @company_name = company_name
     end
 

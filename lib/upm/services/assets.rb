@@ -1,19 +1,22 @@
 # frozen_string_literal: true
 
+require "upm/models/result"
+
 module Upm
   # Manages assets
   class Assets
-    PATH = "../../../resources"
+
+    PATH = "../../../res"
 
     # @return [String]
     def path
-      File.join(__dir__, Constants::PATH)
+      File.join(__dir__, PATH)
     end
 
     # @param path [String] The asset to retrieve relative to the assets root
     # @return     [String]
     def get_path(path)
-      File.join(Assets.path, path)
+      File.join(self.path, path)
     end
 
     # @param path [String] The asset file to retrieve relative to the assets root

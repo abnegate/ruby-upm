@@ -28,6 +28,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/res/templates/project" />
+      <recent name="$PROJECT_DIR$/res/templates" />
+      <recent name="$PROJECT_DIR$/lib/upm/models" />
       <recent name="$PROJECT_DIR$/res/project" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -47,7 +50,7 @@
       <option name="presentableId" value="Default" />
       <updated>1612406270911</updated>
       <workItem from="1612406271983" duration="29000" />
-      <workItem from="1612406313723" duration="8426000" />
+      <workItem from="1612406313723" duration="9718000" />
     </task>
     <servers />
   </component>

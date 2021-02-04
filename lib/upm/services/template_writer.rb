@@ -2,9 +2,11 @@
 
 require "erb"
 require "ostruct"
+require "upm/services/assets"
 
 module Upm
   class TemplateWriter
+    include Upm.inject(:assets)
     include ERB::Util
 
     def write_templates(binding_object, path_hash)
@@ -19,7 +21,7 @@ module Upm
       out_path,
       append = false
     )
-      result = Assets.get_template(template_path)
+      result = assets.get_template(template_path)
       return result unless result.success
 
       FileUtils.mkdir_p(File.dirname(out_path))

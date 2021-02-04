@@ -13,7 +13,7 @@ module Upm
 
   Dry::AutoInject = Dry::AutoInject(container)
 
-  def self.Inject(*keys)
+  def self.inject(*keys)
     Dry::AutoInject[*keys]
   end
 end
