@@ -10,6 +10,8 @@ module Upm
       :progress
     )
 
+    LOCAL_SPEC_ROOT = "#{ENV["HOME"]}/.upm/packages"
+
     def sync(type)
       shell.header("Check for updates")
 
@@ -18,6 +20,8 @@ module Upm
       else
         clone_spec_repo
       end
+
+      shell.say("Synced successfully!")
     end
 
     def release(type, tag)
@@ -47,7 +51,7 @@ module Upm
 
       create_release
 
-      shell.say("Version #{context.project.git_release_tag} was released successfully!")
+      shell.say("Project #{context.project.name} version #{context.project.git_release_tag} was released successfully!")
     end
 
     def delete(type, version)
@@ -59,12 +63,12 @@ module Upm
       system("git tag -d #{version} &> /dev/null")
       system("git push --delete origin #{version} &> /dev/null")
 
-      unless File.exist?("#{ENV["HOME"]}/.upm/#{context.project.name}/#{version}")
+      unless File.exist?("#{ENV["HOME"]}/.upm/packages/#{context.project.name}/#{version}")
         shell.error("Version to delete not found!")
         exit(-1)
       end
 
-      Dir.chdir("#{ENV["HOME"]}/.upm") do
+      Dir.chdir(LOCAL_SPEC_ROOT) do
         progress.start("Removing version from spec repo") do
           FileUtils.rm_rf("#{context.project.name}/#{version}")
           next Result.success
@@ -86,17 +90,66 @@ module Upm
         end
       end
 
-      shell.say("Version #{version} was deleted successfully!")
+      shell.say("Project #{context.project.name} version #{version} was deleted successfully!")
+    end
+
+    def install(name, version)
+      sync("all")
+
+      unless Dir.exist?("#{LOCAL_SPEC_ROOT}/#{name}")
+        shell.error("No package found with name #{name}")
+        exit(-1)
+      end
+
+      if version == "latest"
+        version = `ls #{LOCAL_SPEC_ROOT}/#{name}`.split("\n")[0]
+      end
+
+      unless Dir.exist?("#{LOCAL_SPEC_ROOT}/#{name}/#{version}")
+        shell.error("No package version #{version} found for #{name}")
+        exit(-1)
+      end
+
+      package = read_package("#{LOCAL_SPEC_ROOT}/#{name}/#{version}/package.spec.json")
+      url = package["git"]["url"].strip
+
+      if url.nil? || url.empty?
+        shell.error("Package has no source url!")
+        exit(-1)
+      end
+
+      install_package_by_type(
+          package["type"],
+          url,
+          version
+      )
+    end
+
+    def install_package_by_type(package_type, url, version)
+      case package_type
+      when "unity"
+        clone_to_project(url, version)
+      else
+        clone_to_project(url, version)
+      end
+    end
+
+    def clone_to_project(url, version)
+      progress.start("Cloning package into project") do
+        result = system("git clone #{url} --branch=#{version} &> /dev/null")
+        next Result.failure("Clone failure") unless result
+        next Result.success
+      end
     end
 
     def has_local_spec_repo?
-      Dir.exist?("#{ENV["HOME"]}/.upm")
+      Dir.exist?(LOCAL_SPEC_ROOT)
     end
 
     def clone_spec_repo
       progress.start("Cloning spec repo") do
         Dir.chdir do
-          if system("git clone --quiet --depth 1 #{Upm::SPEC_REPO_URL} .upm > /dev/null")
+          if system("git clone --quiet --depth 1 #{Upm::SPEC_REPO_URL} #{LOCAL_SPEC_ROOT} > /dev/null")
             next Result.success
           else
             next Result.failure("Failed to clone spec repo.")
@@ -106,7 +159,7 @@ module Upm
     end
 
     def pull_spec_repo
-      Dir.chdir("#{ENV["HOME"]}/.upm") do
+      Dir.chdir(LOCAL_SPEC_ROOT) do
         progress.start("Updating spec repo") do
           if system("git pull origin main --quiet --depth 1 > /dev/null")
             next Result.success
@@ -121,7 +174,6 @@ module Upm
       package = read_package
 
       if package["git"]["url"].strip.empty?
-        puts "didnt get git url from package"
         package["git"]["url"] = `git ls-remote --get-url origin`
                                     &.gsub("ssh", "https")
                                     &.gsub("git@", "")
@@ -153,7 +205,7 @@ module Upm
     end
 
     def create_release
-      Dir.chdir("#{ENV["HOME"]}/.upm") do
+      Dir.chdir(LOCAL_SPEC_ROOT) do
         unless File.exist?(context.project.name)
           FileUtils.mkdir_p(context.project.name)
         end
@@ -187,9 +239,9 @@ module Upm
       end
     end
 
-    def read_package
+    def read_package(path = "package.spec.json")
       result = progress.start("Reading package info") {
-        json = File.read("package.spec.json")
+        json = File.read(path)
         package = JSON.parse(json)
         next Result.success(nil, package)
       }

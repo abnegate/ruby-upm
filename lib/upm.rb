@@ -68,6 +68,15 @@ module Upm
     def delete(version)
       spec_repo_manager.delete(options[:type], version)
     end
+
+    desc "install", "Install a package in the current directory"
+    option :version, aliases: "-v", default: "latest", desc: "The version to install"
+    def install(name)
+      spec_repo_manager.install(
+        name,
+        options[:version]
+      )
+    end
   end
 
   class Error < StandardError; end
