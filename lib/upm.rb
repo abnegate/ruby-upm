@@ -66,7 +66,7 @@ module Upm
     desc "delete", "Delete the current package"
     option :type, aliases: "-t", enum: ["unity", "npm"], default: "unity", desc: "The type of package to delete"
     def delete(version)
-      spec_repo_manager.delete(version)
+      spec_repo_manager.delete(options[:type], version)
     end
   end
 

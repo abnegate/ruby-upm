@@ -37,7 +37,7 @@ module Upm
         exit(-1)
       end
 
-      fill_context(tag)
+      fill_context(type, tag)
 
       unless create_package_tag(context.project.git_release_tag).success
         exit(-1)
@@ -53,7 +53,11 @@ module Upm
     def delete(type, version)
       sync(type)
 
-      fill_context
+      fill_context(type)
+
+      # Try delete local/remote tags, but continue with spec deletion even if they fail.
+      system("git tag -d #{version} &> /dev/null")
+      system("git push --delete origin #{version} &> /dev/null")
 
       unless File.exist?("#{ENV["HOME"]}/.upm/#{context.project.name}/#{version}")
         shell.error("Version to delete not found!")
@@ -65,7 +69,24 @@ module Upm
           FileUtils.rm_rf("#{context.project.name}/#{version}")
           next Result.success
         end
+        progress.start("Comitting removal") do
+          result = system("git add #{context.project.name}/#{version} &> /dev/null")
+          next Result.failure("Spec repo add file error") unless result
+
+          result = system("git commit -m \"[Delete] #{context.project.name} #{version}\" &> /dev/null")
+          next Result.failure("Spec repo commit error") unless result
+
+          next Result.success
+        end
+        progress.start("Finalizing delete") do
+          result = system("git push --force &> /dev/null")
+          next Result.failure("Spec repo push error") unless result
+
+          next Result.success
+        end
       end
+
+      shell.say("Version #{version} was deleted successfully!")
     end
 
     def has_local_spec_repo?
@@ -96,7 +117,7 @@ module Upm
       end
     end
 
-    def fill_context(tag = nil)
+    def fill_context(type, tag = nil)
       package = read_package
 
       if package["git"]["url"].strip.empty?
@@ -113,6 +134,7 @@ module Upm
       write_package(package)
 
       context.project = Project.new(
+          type,
         ".",
         File.basename(Dir.getwd),
         package["name"],

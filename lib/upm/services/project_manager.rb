@@ -37,6 +37,7 @@ module Upm
       shell.header("Create package")
 
       context.project = Project.new(
+        type,
         path,
         project_name,
         company_name,
@@ -51,6 +52,8 @@ module Upm
       )
 
       create_files
+
+      shell.say("Project #{context.project.name} was created successfully!")
     end
 
     def create_files

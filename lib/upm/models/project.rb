@@ -2,7 +2,8 @@
 
 module Upm
   class Project
-    attr_accessor :name,
+    attr_accessor :type,
+      :name,
       :root_path,
       :company_name,
       :description,
@@ -16,6 +17,7 @@ module Upm
       :git_release_tag
 
     def initialize(
+      project_type,
       project_path,
       project_name,
       company_name,
@@ -38,6 +40,7 @@ module Upm
         author_email = author_email.strip! || author_email
       end
 
+      @type = project_type
       @root_path = project_path
       @name = project_name
       @company_name = company_name
