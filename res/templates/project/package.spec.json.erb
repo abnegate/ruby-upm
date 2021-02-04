@@ -1,0 +1,25 @@
+{
+  "name": "<%= project.package_name %>",
+  "version": "1.0.0",
+  "displayName": "<%= project.display_name %>",
+  "description": "<%= project.description %>",
+  "unity": "<%= project.unity_version %>",
+  "unityRelease": "<%= project.unity_release %>",
+  "dependencies": {
+  },
+  "keywords": [
+    <%- project.keywords.each do |word| -%>
+    "<%= word %>",
+    <%- end -%>
+    "keyword"
+  ],
+  "author": {
+    "name": "<%= project.author_name %>",
+    "email": "<%= project.author_email %>",
+    "url": "<%= project.author_url %>"
+  },
+  "git": {
+    "url": "<%= project.git_url %>",
+    "tag": "<%= project.git_release_tag %>"
+  }
+}

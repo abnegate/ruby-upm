@@ -5,11 +5,27 @@ require "upm/services/template_writer"
 
 module Upm
   class ProjectManager
-    include Upm.inject(:context)
-    include Upm.inject(:file_manager)
-    include Upm.inject(:template_writer)
+    include Upm.inject(
+      :context,
+      :shell,
+      :progress,
+      :file_manager,
+      :template_writer
+    )
 
-    def create(path, project_name, company_name)
+    def create(
+      path,
+      project_name,
+      company_name,
+      description,
+      unity_version,
+      unity_release,
+      author_name,
+      author_email,
+      author_url,
+      keywords,
+      git_url
+    )
       if path.nil? ||
           project_name.nil? ||
           company_name.nil? ||
@@ -17,43 +33,54 @@ module Upm
         exit(-1)
       end
 
-      create_context(path, project_name, company_name)
-      create_files
-    end
+      shell.header("Create package")
 
-    private_instance_methods
-
-    def create_context(path, project_name, company_name)
       context.project = Project.new(
         path,
         project_name,
-        company_name
+        company_name,
+        description,
+        unity_version,
+        unity_release,
+        author_name,
+        author_email,
+        author_url,
+        keywords,
+        git_url
       )
+
+      create_files
     end
 
     def create_files
-      file_manager.create_directory(
+      progress.start("Creating directories") do
+        file_manager.create_directory(
           context.project.root_path,
           context.project.name
-      )
+        )
+        next Result.success
+      end
 
-      template_writer.write_templates(
-          context.project,
+      progress.start("Writing templates") do
+        template_writer.write_templates(
+          context,
           {
-              "project/package.json.erb": "#{context.project.files_path}/package.json",
-              "project/README.md.erb": "#{context.project.files_path}/README.md",
-              "project/CHANGELOG.md.erb": "#{context.project.files_path}/CHANGELOG.md",
-              "project/LICENSE.md.erb": "#{context.project.files_path}/LICENSE.md",
-              "project/EditorExample.cs.erb": "#{context.project.files_path}/Editor/EditorExample.cs",
-              "project/EditorExampleTest.cs.erb": "#{context.project.files_path}/Tests/Editor/EditorExampleTest.cs",
-              "project/Unity.package_name.Editor.asmdef.erb": "#{context.project.files_path}/Editor/Unity.#{context.project.package_name}.Editor.asmdef",
-              "project/Unity.package_name.Editor.Tests.asmdef.erb": "#{context.project.files_path}/Tests/Editor/Unity.#{context.project.package_name}.Editor.Tests.asmdef",
-              "project/RuntimeExample.cs.erb": "#{context.project.files_path}/Runtime/RuntimeExample.cs",
-              "project/RuntimeExampleTest.cs.erb": "#{context.project.files_path}/Tests/Runtime/RuntimeExampleTest.cs",
-              "project/Unity.package_name.asmdef.erb": "#{context.project.files_path}/Runtime/Unity.#{context.project.package_name}.asmdef",
-              "project/Unity.package_name.Tests.asmdef.erb": "#{context.project.files_path}/Tests/Runtime/Unity.#{context.project.package_name}.Tests.asmdef"
+            "project/package.spec.json.erb": "#{context.project.files_path}/package.spec.json",
+            "project/README.md.erb": "#{context.project.files_path}/README.md",
+            "project/CHANGELOG.md.erb": "#{context.project.files_path}/CHANGELOG.md",
+            "project/LICENSE.md.erb": "#{context.project.files_path}/LICENSE.md",
+            "project/EditorExample.cs.erb": "#{context.project.files_path}/Editor/EditorExample.cs",
+            "project/EditorExampleTest.cs.erb": "#{context.project.files_path}/Tests/Editor/EditorExampleTest.cs",
+            "project/Unity.package_name.Editor.asmdef.erb": "#{context.project.files_path}/Editor/Unity.#{context.project.package_name}.Editor.asmdef",
+            "project/Unity.package_name.Editor.Tests.asmdef.erb": "#{context.project.files_path}/Tests/Editor/Unity.#{context.project.package_name}.Editor.Tests.asmdef",
+            "project/RuntimeExample.cs.erb": "#{context.project.files_path}/Runtime/RuntimeExample.cs",
+            "project/RuntimeExampleTest.cs.erb": "#{context.project.files_path}/Tests/Runtime/RuntimeExampleTest.cs",
+            "project/Unity.package_name.asmdef.erb": "#{context.project.files_path}/Runtime/Unity.#{context.project.package_name}.asmdef",
+            "project/Unity.package_name.Tests.asmdef.erb": "#{context.project.files_path}/Tests/Runtime/Unity.#{context.project.package_name}.Tests.asmdef"
           }
-      )
+        )
+        next Result.success
+      end
     end
   end
 end

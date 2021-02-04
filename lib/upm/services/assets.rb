@@ -5,7 +5,6 @@ require "upm/models/result"
 module Upm
   # Manages assets
   class Assets
-
     PATH = "../../../res"
 
     # @return [String]
