@@ -10,7 +10,7 @@ module Upm
       :progress
     )
 
-    def sync
+    def sync(type)
       shell.header("Check for updates")
 
       if has_local_spec_repo?
@@ -20,8 +20,8 @@ module Upm
       end
     end
 
-    def release
-      sync
+    def release(type, tag)
+      sync(type)
 
       shell.header("Get package context")
 
@@ -37,20 +37,21 @@ module Upm
         exit(-1)
       end
 
-      fill_context
+      fill_context(tag)
 
-      unless create_package_tag(version = context.project.git_release_tag).success
-        shell.error("Tag error")
+      unless create_package_tag(context.project.git_release_tag).success
         exit(-1)
       end
 
       shell.header("Publish package")
 
       create_release
+
+      shell.say("Version #{context.project.git_release_tag} was released successfully!")
     end
 
-    def delete(version)
-      sync
+    def delete(type, version)
+      sync(type)
 
       fill_context
 
@@ -95,10 +96,9 @@ module Upm
       end
     end
 
-    def fill_context
+    def fill_context(tag = nil)
       package = read_package
 
-      puts "read package"
       if package["git"]["url"].strip.empty?
         puts "didnt get git url from package"
         package["git"]["url"] = `git ls-remote --get-url origin`
@@ -108,7 +108,7 @@ module Upm
           shell.ask("Please enter the git URL to your project source:")
       end
 
-      package["git"]["tag"] = package["version"]
+      package["git"]["tag"] = tag || package["version"]
 
       write_package(package)
 
@@ -144,8 +144,8 @@ module Upm
 
           FileUtils.mkdir_p(context.project.git_release_tag)
           Dir.chdir(context.project.git_release_tag) do
-          copy_spec_package_json
-          publish_to_git(context.project.git_release_tag)
+            copy_spec_package_json
+            publish_to_git
           end
         end
       end
@@ -178,7 +178,7 @@ module Upm
       progress.start("Writing package info") do
         File.write(
           "package.spec.json",
-          package.to_json
+          JSON.pretty_generate(package)
         )
         next Result.success
       end
@@ -194,14 +194,20 @@ module Upm
       end
     end
 
-    def publish_to_git(version)
-      progress.start("Adding version to git") do
+    def publish_to_git
+      version = context.project.git_release_tag
+
+      progress.start("Adding new version") do
         result = system("git add package.spec.json &> /dev/null")
         next Result.failure("Spec repo add file error") unless result
 
-        result = system("git commit -m [Add] #{context.project.name} #{version} &> /dev/null")
+        result = system("git commit -m \"[Add] #{context.project.name} #{version}\" &> /dev/null")
         next Result.failure("Spec repo commit error") unless result
 
+        next Result.success
+      end
+
+      progress.start("Uploading new version") do
         result = system("git push &> /dev/null")
         next Result.failure("Spec repo push error") unless result
 

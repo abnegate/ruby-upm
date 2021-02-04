@@ -14,6 +14,7 @@ module Upm
     )
 
     def create(
+      type,
       path,
       project_name,
       company_name,
