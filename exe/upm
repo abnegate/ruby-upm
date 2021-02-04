@@ -1,0 +1,7 @@
+# frozen_string_literal: true
+
+require "upm"
+require "upm/ioc/container"
+
+Container.init
+Upm::CLI.start(ARGV)

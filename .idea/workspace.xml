@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4df23016-4e62-4c61-a58b-4c97c4d25c39" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Ruby File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1nzwY1ICpz076GKV4inJO5Bj27m" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" RAKE_SPRING_PRE_LOADER_OPTION="true" RAILS_SPRING_PRE_LOADER_OPTION="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4df23016-4e62-4c61-a58b-4c97c4d25c39" name="Default Changelist" comment="" />
+      <created>1612406270911</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1612406270911</updated>
+      <workItem from="1612406271983" duration="29000" />
+      <workItem from="1612406313723" duration="3176000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="445" y="541" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1612408624460">
+      <screen x="35" y="23" width="2525" height="1417" />
+    </state>
+    <state x="445" y="541" key="#com.intellij.fileTypes.FileTypeChooser/35.23.2525.1417@35.23.2525.1417" timestamp="1612408624460" />
+    <state x="457" y="474" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1612409518154">
+      <screen x="35" y="23" width="2525" height="1417" />
+    </state>
+    <state x="457" y="474" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/35.23.2525.1417@35.23.2525.1417" timestamp="1612409518154" />
+    <state x="300" y="365" key="SettingsEditor" timestamp="1612409628430">
+      <screen x="35" y="23" width="2525" height="1417" />
+    </state>
+    <state x="300" y="365" key="SettingsEditor/35.23.2525.1417@35.23.2525.1417" timestamp="1612409628430" />
+  </component>
+</project>
