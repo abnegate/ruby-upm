@@ -6,7 +6,7 @@ require "upm/services/assets"
 
 module Upm
   class TemplateWriter
-    include Upm.inject(:assets)
+    include Upm.injected(:assets)
     include ERB::Util
 
     def write_templates(binding_object, path_hash)

@@ -5,7 +5,7 @@ require "upm/services/template_writer"
 
 module Upm
   class ProjectManager
-    include Upm.inject(
+    include Upm.injected(
       :context,
       :shell,
       :progress,
@@ -69,7 +69,7 @@ module Upm
         template_writer.write_templates(
           context,
           {
-            "project/package.spec.json.erb": "#{context.project.files_path}/package.spec.json",
+            "project/umpspec.json.erb": "#{context.project.files_path}/upmspec.json",
             "project/README.md.erb": "#{context.project.files_path}/README.md",
             "project/CHANGELOG.md.erb": "#{context.project.files_path}/CHANGELOG.md",
             "project/LICENSE.md.erb": "#{context.project.files_path}/LICENSE.md",

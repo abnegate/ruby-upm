@@ -4,8 +4,6 @@
   "version": "1.0.0",
   "displayName": "<%= project.display_name %>",
   "description": "<%= project.description %>",
-  "unity": "<%= project.unity_version %>",
-  "unityRelease": "<%= project.unity_release %>",
   "dependencies": {
   },
   "keywords": [
@@ -22,5 +20,13 @@
   "git": {
     "url": "<%= project.git_url %>",
     "tag": "<%= project.git_release_tag %>"
+  },
+  <%- case project.type -%>
+  <%- when "unity" -%>
+  "unity": {
+    "version": "<%= project.unity_version %>",
+    "release": "<%= project.unity_release %>"
   }
+  <%- else -%>
+  <%- end -%>
 }

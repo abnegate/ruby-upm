@@ -34,4 +34,10 @@ Gem::Specification.new do |spec|
   spec.add_dependency "thor", "~> 1.1.0"
   spec.add_dependency "tty-spinner", "~> 0.9.3"
   spec.add_dependency "pastel", "~> 0.8.0"
+  spec.add_dependency "parallel", "~> 1.20.1"
+
+  spec.add_development_dependency "aruba", "~> 0.14.14"
+  spec.add_development_dependency "rake", "~> 13.0"
+  spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "rubocop", "~> 0.80"
 end
