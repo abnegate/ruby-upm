@@ -16,5 +16,6 @@ jobs:
 
       - name: Cucumber test
         run: |
+          gem install bundler
           bundle install
           bundle exec cucumber --format pretty --format html --out output/report.html
