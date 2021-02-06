@@ -14,8 +14,15 @@ jobs:
         with:
           ruby-version: 2.6.x
 
-      - name: Cucumber test
+      - name: Functional test
         run: |
           gem install bundler
           bundle install
-          bundle exec cucumber --format pretty --format html --out output/report.html
+          bundle exec cucumber --format pretty --format html --out report.html
+
+      - name: Archive test results
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-results
+          path: report.html
+          retention_days: 5
