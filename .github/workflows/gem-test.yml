@@ -4,7 +4,7 @@ on: push
 
 jobs:
   test:
-    name: Cucumber Test
+    name: Functional Test
     runs-on: ubuntu-latest
 
     steps:
@@ -14,15 +14,17 @@ jobs:
         with:
           ruby-version: 2.6.x
 
-      - name: Functional test
+      - name: Run tests
         run: |
           gem install bundler
           bundle install
           bundle exec cucumber --format pretty --format html --out report.html
 
-      - name: Archive test results
+      - name: Archive results
+        if: ${{ always() }}
         uses: actions/upload-artifact@v2
         with:
           name: test-results
           path: report.html
           retention_days: 5
+
