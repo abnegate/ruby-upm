@@ -27,7 +27,9 @@ module Upm
       elsif matches.size > 1
         shell.say("Multiple matches for #{name}")
 
-        matches.each_with_index.map { |match, index| puts Shell.add_date("#{index}: #{match}\n") }
+        matches.each_with_index.map do |match, index|
+          puts Shell.add_date("#{index}: #{match}\n")
+        end
 
         index = shell.ask(
           "Select the index of the package you want to install:",
@@ -60,6 +62,8 @@ module Upm
         url,
         version
       )
+
+      shell.say("Installed #{name} #{version} from #{repo_name} successfully!")
     end
 
     private

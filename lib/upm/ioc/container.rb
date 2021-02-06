@@ -17,6 +17,7 @@ module Upm
   container.register(:spec_installer, -> { SpecInstaller.new })
   container.register(:spec_restorer, -> { SpecRestorer.new })
   container.register(:spec_source_manager, -> { SpecSourceManager.new })
+  container.register(:spec_package_manager, -> { SpecPackageManager.new })
   container.register(:template_writer, -> { TemplateWriter.new })
   container.register(:assets, -> { Assets.new })
   container.register(:shell, -> { Shell })

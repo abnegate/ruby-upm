@@ -5,6 +5,18 @@ module Upm
       :spec_manager
     )
 
+    desc "list", "List all packages in the given or all"
+    option :type, aliases: "-t", enum: Upm::SUPPORTED_TYPES, desc: "The type of package to create"
+    option :repo_name, aliases: "-n", default: Upm::CORE_SPEC_REPO_NAME, desc: "The repo name to push to, defaults to core"
+    option :local, aliases: "-l", default: false, desc: "List local packages instead of remote"
+    def list
+      spec_manager.list_packages(
+        options[:type],
+        options[:repo_name],
+        options[:local]
+      )
+    end
+
     desc "create <name>", "Create a Unity package with the given name"
     option :type, aliases: "-t", enum: Upm::SUPPORTED_TYPES, default: "unity", desc: "The type of package to create"
     option :company_name, aliases: "-c", required: true, desc: "The company name to set on the package"
@@ -71,6 +83,7 @@ module Upm
     end
 
     map(
+      "l" => "list",
       "c" => "create",
       "p" => "push",
       "d" => "delete",

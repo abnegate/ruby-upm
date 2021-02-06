@@ -13,7 +13,6 @@ module Upm
 
     desc "list", "List all spec repos"
     def list
-      spec_manager.sync("all")
       spec_manager.list_sources
     end
 
@@ -22,13 +21,11 @@ module Upm
     option :url, aliases: "-u", desc: "The spec repo url to add"
     def add
       spec_manager.add_source(options[:name], options[:url])
-      spec_manager.sync("all")
     end
 
     desc "remove", "Remove a spec repo"
     def remove(name)
       spec_manager.remove_source(name)
-      spec_manager.sync("all")
     end
 
     map(

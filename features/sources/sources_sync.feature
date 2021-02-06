@@ -3,7 +3,7 @@ Feature: UPM Sources - Remove
   In order to remove a spec source repository to a local UPM installation
   As a CLI I want to be as objective as possible
 
-  @e2e @sources
+  @e2e @sources @sync
   Scenario: Sync all spec source repos
     Given I run `bundle exec ../../exe/upm source sync` interactively
     Then I wait for interactive output to contain "Synced successfully!"
