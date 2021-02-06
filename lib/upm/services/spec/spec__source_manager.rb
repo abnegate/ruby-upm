@@ -5,7 +5,7 @@ require "parallel"
 
 module Upm
   # Manages spec repo sources
-  class SpecRepoSourcesManager
+  class SpecSourceManager
     include Upm.injected(
       :table_viewer,
       :progress,

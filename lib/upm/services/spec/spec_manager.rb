@@ -4,49 +4,49 @@ require "json"
 
 module Upm
   # Manages a local UPM environment
-  class SpecRepoManager
+  class SpecManager
     include Upm.injected(
       :context,
       :shell,
       :progress,
-      :spec_repo_syncer,
-      :spec_repo_pusher,
-      :spec_repo_deleter,
-      :spec_repo_installer,
-      :spec_repo_restorer,
-      :spec_repo_sources_manager
+      :spec_syncer,
+      :spec_pusher,
+      :spec_deleter,
+      :spec_installer,
+      :spec_restorer,
+      :spec_source_manager
     )
 
     def list_sources
-      spec_repo_sources_manager.list
+      spec_source_manager.list
     end
 
     def add_source(repo_name, repo_url)
-      spec_repo_sources_manager[repo_name] = repo_url
+      spec_source_manager[repo_name] = repo_url
     end
 
     def remove_source(repo_name)
-      spec_repo_sources_manager[repo_name] = nil
+      spec_source_manager[repo_name] = nil
     end
 
     def sync(type)
-      spec_repo_syncer.sync(type)
+      spec_syncer.sync(type)
     end
 
     def push(type, tag, repo_name)
-      spec_repo_pusher.push(type, tag, repo_name)
+      spec_pusher.push(type, tag, repo_name)
     end
 
     def delete(type, version)
-      spec_repo_deleter.delete(type, version)
+      spec_deleter.delete(type, version)
     end
 
     def install(name, version)
-      spec_repo_installer.install(name, version)
+      spec_installer.install(name, version)
     end
 
     def restore_packages
-      spec_repo_restorer.restore_packages
+      spec_restorer.restore_packages
     end
 
     def self.has_local_spec_repo?(type, repo_name)

@@ -2,11 +2,11 @@
 
 module Upm
   # Manages syncing updates to and from a spec repo
-  class SpecRepoSyncer
+  class SpecSyncer
     include Upm.injected(
       :shell,
       :progress,
-      :spec_repo_sources_manager
+      :spec_source_manager
     )
 
     # @param [String] type The type of packages to sync, or nil if no filtering is desired.
@@ -15,14 +15,14 @@ module Upm
 
       FileUtils.mkdir_p(Upm::UPM_ROOT)
 
-      spec_repo_sources_manager[Upm::CORE_SPEC_REPO_NAME] = Upm::CORE_SPEC_REPO_URL
+      spec_source_manager[Upm::CORE_SPEC_REPO_NAME] = Upm::CORE_SPEC_REPO_URL
 
       progress.start("Syncing spec source repos") do
-        spec_repo_sources_manager.each_source_parallel do |spec_repo_name, spec_repo_url|
+        spec_source_manager.each_source_parallel do |spec_repo_name, spec_repo_url|
           spec_root = "#{SPEC_ROOT}/#{type}/#{spec_repo_name}"
 
           # FIXME: This will duplicate packages in "all" if they are also in a specific type set?
-          if SpecRepoManager.has_local_spec_repo?(type, spec_repo_name)
+          if SpecManager.has_local_spec_repo?(type, spec_repo_name)
             pull_spec_repo(spec_repo_name, spec_root)
           else
             clone_spec_repo(spec_repo_name, spec_repo_url, spec_root)

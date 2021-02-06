@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "tty-table"
+require "terminal-table"
 
 module Upm
   # Manage displaying tabular data
@@ -12,7 +12,10 @@ module Upm
     def render(title, *rows)
       return if rows.nil? || rows.empty?
 
-      table = TTY::Table.new(header: rows[0])
+      table = Terminal::Table.new(
+        title: title,
+        headings: rows[0]
+      )
 
       rows.shift
       rows.flatten.each_slice(2) do |name, url|
@@ -21,11 +24,7 @@ module Upm
         end
       end
 
-      shell.say(
-        title,
-        add_date: false
-      )
-      puts table.render(:ascii, padding: [0, 1, 0, 1])
+      puts table
     end
   end
 end

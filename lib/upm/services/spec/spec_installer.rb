@@ -1,10 +1,10 @@
 module Upm
   # Manages install packages from a spec repo
-  class SpecRepoInstaller
+  class SpecInstaller
     include Upm.injected(
       :shell,
       :progress,
-      :spec_repo_syncer
+      :spec_syncer
     )
 
     # @param [String] name      The name of the package to install
@@ -15,7 +15,7 @@ module Upm
       type = "all",
       repo_name = Upm::CORE_SPEC_REPO_NAME
     )
-      spec_repo_syncer.sync(type)
+      spec_syncer.sync(type)
 
       matches = Dir.glob("#{SPEC_ROOT}/**/*#{name}*").select { |d| Dir.exist?(d) }
 
@@ -47,7 +47,7 @@ module Upm
         exit(-1)
       end
 
-      package = SpecRepoManager.read_package_spec("#{match}/#{version}/#{Upm::SPEC_FILE_PATH}")
+      package = SpecManager.read_package_spec("#{match}/#{version}/#{Upm::SPEC_FILE_PATH}")
       url = package["git"]["url"].strip
 
       if url.nil? || url.empty?

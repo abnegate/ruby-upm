@@ -2,7 +2,7 @@ module Upm
   class Packages < Thor
     include Upm.injected(
       :project_manager,
-      :spec_repo_manager
+      :spec_manager
     )
 
     desc "create <name>", "Create a Unity package with the given name"
@@ -41,7 +41,7 @@ module Upm
     option :tag, aliases: "-t", default: nil, desc: "The git tag to match this release, defaults to the current version"
     option :repo_name, aliases: "-n", default: Upm::CORE_SPEC_REPO_NAME, desc: "The repo name to push to, defaults to core"
     def push
-      spec_repo_manager.push(
+      spec_manager.push(
         options[:type],
         options[:tag],
         options[:repo_name]
@@ -53,13 +53,13 @@ module Upm
     # desc "delete", "Delete the current package"
     # option :type, aliases: "-t", enum: ["unity", "npm"], default: "unity", desc: "The type of package to delete"
     # def delete(version)
-    #   spec_repo_manager.delete(options[:type], version)
+    #   spec_manager.delete(options[:type], version)
     # end
 
     desc "install", "Install a package in the current directory"
     option :version, aliases: "-v", desc: "The version to install"
     def install(name)
-      spec_repo_manager.install(
+      spec_manager.install(
         name,
         options[:version]
       )
@@ -67,7 +67,7 @@ module Upm
 
     desc "restore", "Restore packages defined in the current project"
     def restore
-      spec_repo_manager.restore_packages
+      spec_manager.restore_packages
     end
 
     map(

@@ -1,13 +1,13 @@
 module Upm
   # Manages pushing packages to a spec repo
-  class SpecRepoPusher
+  class SpecPusher
     include Upm.injected(
       :shell,
       :progress,
       :context,
       :context_inflator,
-      :spec_repo_syncer,
-      :spec_repo_sources_manager
+      :spec_syncer,
+      :spec_source_manager
     )
 
     # @param [String] type
@@ -17,7 +17,7 @@ module Upm
       tag,
       repo_name
     )
-      spec_repo_syncer.sync(type)
+      spec_syncer.sync(type)
 
       shell.header("Get package context")
 

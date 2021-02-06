@@ -1,16 +1,16 @@
 module Upm
   # Manages deleting package versions from a spec repo
-  class SpecRepoDeleter
+  class SpecDeleter
     include Upm.injected(
       :context,
       :context_inflator,
-      :spec_repo_syncer
+      :spec_syncer
     )
 
     # @param [String] type    The type of package to delete, defaults to reading from context.
     # @param [String] version The version of the package to delete.
     def delete(type, version)
-      spec_repo_syncer.sync(type)
+      spec_syncer.sync(type)
 
       context_inflator.fill_context(context, type)
 

@@ -2,7 +2,7 @@ module Upm
   # Inflates a context object for using data in other services
   class ContextInflator
     def fill_context(context, type, tag = nil)
-      package = SpecRepoManager.read_package_spec
+      package = SpecManager.read_package_spec
 
       if package["git"]["url"].strip.empty?
         package["git"]["url"] = `git ls-remote --get-url origin`
@@ -14,7 +14,7 @@ module Upm
 
       package["git"]["tag"] = tag || package["version"]
 
-      SpecRepoManager.write_package_spec(package)
+      SpecManager.write_package_spec(package)
 
       context.project = Project.new(
         type,

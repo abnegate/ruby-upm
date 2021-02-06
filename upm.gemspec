@@ -31,9 +31,10 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "dry-auto_inject", "~> 0.7.0"
   spec.add_dependency "dry-container", "~> 0.7.2"
+  spec.add_dependency "git", "~> 1.8.1"
+  spec.add_dependency "terminal-table", "~> 1.8.0"
   spec.add_dependency "thor", "~> 1.1.0"
   spec.add_dependency "tty-spinner", "~> 0.9.3"
-  spec.add_dependency "tty-table", "~> 0.12.0"
   spec.add_dependency "pastel", "~> 0.8.0"
   spec.add_dependency "parallel", "~> 1.20.1"
 

@@ -1,8 +1,8 @@
-# Upm
+# Unite Package Manager CLI
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/upm`. To experiment with that code, run `bin/console` for an interactive prompt.
+Consolidating package manager that allow installing from many sources into any project type. 
 
-TODO: Delete this and the text above, and describe your gem
+Use UPM to consolidate npm, yarn, pip, rubygems, nuget package dependencies into a single project.
 
 ## Installation
 
@@ -32,7 +32,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/upm. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/upm/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/ruby-upm. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/ruby-upm/blob/master/CODE_OF_CONDUCT.md).
 
 ## License
 
@@ -40,4 +40,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Upm project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/upm/blob/main/CODE_OF_CONDUCT.md).
+Everyone interacting in the Blag project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/ruby-upm/blob/master/CODE_OF_CONDUCT.md).

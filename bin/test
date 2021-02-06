@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+TAG="upm-tests"
+
+docker build -t "${TAG}" -f docker/Dockerfile.tests .
+docker run "${TAG}"

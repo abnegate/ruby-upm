@@ -1,0 +1,17 @@
+FROM ruby:3.0.0
+
+RUN mkdir /usr/src/app
+RUN mkdir /usr/src/app/output
+
+WORKDIR /usr/src/app
+
+COPY upm.gemspec .
+COPY Gemfile .
+COPY Gemfile.lock .
+COPY lib/upm/constants.rb lib/upm/constants.rb
+
+RUN bundle install
+
+ADD . .
+
+CMD ["bundle", "exec", "cucumber", "features", "--format", "pretty", "--format", "html", "--out", "output/report.html"]
