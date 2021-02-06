@@ -54,8 +54,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Cucumber.@e2e: Add a custom source, then display the source list, then remove it, then display the source list (4)">
-    <configuration name="@e2e: Add a custom source, then display the source list, then remove it, then display the source list (1)" type="CucumberRunConfigurationType" factoryName="Cucumber" temporary="true">
+  <component name="RunManager" selected="Cucumber.@e2e: Invalid parameter (3)">
+    <configuration name="@e2e: Invalid parameter (1)" type="CucumberRunConfigurationType" factoryName="Cucumber" temporary="true">
       <module name="ruby-upm" />
       <predefined_log_file enabled="true" id="RUBY_CUCUMBER" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
@@ -79,7 +79,7 @@
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/features/sources/sources_list.feature" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TAGS_FILTER" VALUE="" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="^Add a custom source\, then display the source list\, then remove it\, then display the source list$" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="^Invalid parameter$" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_ARGS" VALUE="--color -r features" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
@@ -92,7 +92,7 @@
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SETTINGS_VERSION" VALUE="2" />
       <method v="2" />
     </configuration>
-    <configuration name="@e2e: Add a custom source, then display the source list, then remove it, then display the source list (2)" type="CucumberRunConfigurationType" factoryName="Cucumber" temporary="true">
+    <configuration name="@e2e: Invalid parameter (2)" type="CucumberRunConfigurationType" factoryName="Cucumber" temporary="true">
       <module name="ruby-upm" />
       <predefined_log_file enabled="true" id="RUBY_CUCUMBER" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
@@ -116,7 +116,7 @@
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/features/sources/sources_list.feature" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TAGS_FILTER" VALUE="" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="^Add a custom source\, then display the source list\, then remove it\, then display the source list$" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="^Invalid parameter$" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_ARGS" VALUE="--color -r features" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
@@ -129,7 +129,7 @@
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SETTINGS_VERSION" VALUE="2" />
       <method v="2" />
     </configuration>
-    <configuration name="@e2e: Add a custom source, then display the source list, then remove it, then display the source list (3)" type="CucumberRunConfigurationType" factoryName="Cucumber" temporary="true">
+    <configuration name="@e2e: Invalid parameter (3)" type="CucumberRunConfigurationType" factoryName="Cucumber" temporary="true">
       <module name="ruby-upm" />
       <predefined_log_file enabled="true" id="RUBY_CUCUMBER" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
@@ -153,7 +153,7 @@
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/features/sources/sources_list.feature" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TAGS_FILTER" VALUE="" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="^Add a custom source\, then display the source list\, then remove it\, then display the source list$" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="^Invalid parameter$" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_ARGS" VALUE="--color -r features" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
@@ -166,44 +166,7 @@
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SETTINGS_VERSION" VALUE="2" />
       <method v="2" />
     </configuration>
-    <configuration name="@e2e: Add a custom source, then display the source list, then remove it, then display the source list (4)" type="CucumberRunConfigurationType" factoryName="Cucumber" temporary="true">
-      <module name="ruby-upm" />
-      <predefined_log_file enabled="true" id="RUBY_CUCUMBER" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <envs>
-        <env name="JRUBY_OPTS" value="-X+O" />
-      </envs>
-      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
-      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" IGNORE_RCOVRT="true" ENABLE_BRANCH_COVERAGE="true" ENABLE_FORKED_COVERAGE="true">
-        <COVERAGE_PATTERN ENABLED="true">
-          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
-        </COVERAGE_PATTERN>
-      </EXTENSION>
-      <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*.feature" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/features/sources/sources_sync.feature" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TAGS_FILTER" VALUE="" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="^Add a custom source\, then display the source list\, then remove it\, then display the source list$" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_ARGS" VALUE="--color -r features" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="VERBOSE_OPTION" VALUE="false" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_RUNNER_PATH" VALUE="" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_RUNNER" VALUE="false" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SETTINGS_VERSION" VALUE="2" />
-      <method v="2" />
-    </configuration>
-    <configuration name="@e2e: Add a custom source, then display the source list, then remove it, then display the source list" type="CucumberRunConfigurationType" factoryName="Cucumber" temporary="true">
+    <configuration name="@e2e: Invalid parameter" type="CucumberRunConfigurationType" factoryName="Cucumber" temporary="true">
       <module name="ruby-upm" />
       <predefined_log_file enabled="true" id="RUBY_CUCUMBER" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
@@ -227,7 +190,44 @@
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/features/sources/sources_list.feature" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TAGS_FILTER" VALUE="" />
-      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="^Add a custom source\, then display the source list\, then remove it\, then display the source list$" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="^Invalid parameter$" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_ARGS" VALUE="--color -r features" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="VERBOSE_OPTION" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_RUNNER_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_RUNNER" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SETTINGS_VERSION" VALUE="2" />
+      <method v="2" />
+    </configuration>
+    <configuration name="sources_add.feature" type="CucumberRunConfigurationType" factoryName="Cucumber" temporary="true">
+      <module name="ruby-upm" />
+      <predefined_log_file enabled="true" id="RUBY_CUCUMBER" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="JRUBY_OPTS" value="-X+O" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" IGNORE_RCOVRT="true" ENABLE_BRANCH_COVERAGE="true" ENABLE_FORKED_COVERAGE="true">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*.feature" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/features/sources/sources_add.feature" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TAGS_FILTER" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_ARGS" VALUE="--color -r features" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
@@ -242,11 +242,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Cucumber.@e2e: Add a custom source, then display the source list, then remove it, then display the source list (4)" />
-        <item itemvalue="Cucumber.@e2e: Add a custom source, then display the source list, then remove it, then display the source list (3)" />
-        <item itemvalue="Cucumber.@e2e: Add a custom source, then display the source list, then remove it, then display the source list (2)" />
-        <item itemvalue="Cucumber.@e2e: Add a custom source, then display the source list, then remove it, then display the source list (1)" />
-        <item itemvalue="Cucumber.@e2e: Add a custom source, then display the source list, then remove it, then display the source list" />
+        <item itemvalue="Cucumber.@e2e: Invalid parameter (3)" />
+        <item itemvalue="Cucumber.@e2e: Invalid parameter (2)" />
+        <item itemvalue="Cucumber.@e2e: Invalid parameter (1)" />
+        <item itemvalue="Cucumber.@e2e: Invalid parameter" />
+        <item itemvalue="Cucumber.sources_add.feature" />
       </list>
     </recent_temporary>
   </component>
@@ -268,29 +268,53 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Display_current_sources_list_with_custom_sources_added__2_.rcov" NAME="@e2e: Display current sources list with custom sources added (2) Coverage Results" MODIFIED="1612593797669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
+    <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Remove_a_custom_source__missing_the_name__1_.rcov" NAME="@e2e: Remove a custom source, missing the name (1) Coverage Results" MODIFIED="1612605151757" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
     <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Add_a_custom_source__then_display_the_source_list__then_remove_it__then_display_the_source_list.rcov" NAME="@e2e: Add a custom source, then display the source list, then remove it, then display the source list Coverage Results" MODIFIED="1612602285782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
+    <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Add_a_custom_source__missing_the_name__1_.rcov" NAME="@e2e: Add a custom source, missing the name (1) Coverage Results" MODIFIED="1612604805871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
+    <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Add_a_custom_source__missing_the_name_and_url.rcov" NAME="@e2e: Add a custom source, missing the name and url Coverage Results" MODIFIED="1612604954243" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
+    <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Invalid_parameter.rcov" NAME="@e2e: Invalid parameter Coverage Results" MODIFIED="1612609357298" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
     <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Add_a_custom_source__then_display_the_source_list__2_.rcov" NAME="@e2e: Add a custom source, then display the source list (2) Coverage Results" MODIFIED="1612595999157" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
-    <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Add_a_custom_source__then_display_the_source_list__then_remove_it__then_display_the_source_list__1_.rcov" NAME="@e2e: Add a custom source, then display the source list, then remove it, then display the source list (1) Coverage Results" MODIFIED="1612602545246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
     <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Display_current_sources_list_with_custom_sources_added__3_.rcov" NAME="@e2e: Display current sources list with custom sources added (3) Coverage Results" MODIFIED="1612593828665" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
     <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Add_a_custom_source__then_display_the_source_list.rcov" NAME="@e2e: Add a custom source, then display the source list Coverage Results" MODIFIED="1612601092548" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
+    <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Invalid_parameter__1_.rcov" NAME="@e2e: Invalid parameter (1) Coverage Results" MODIFIED="1612609372135" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
     <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Display_current_sources_list_with_custom_sources_added.rcov" NAME="@e2e: Display current sources list with custom sources added Coverage Results" MODIFIED="1612593575598" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
     <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Display_current_sources_list__4_.rcov" NAME="@e2e: Display current sources list (4) Coverage Results" MODIFIED="1612592920300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
-    <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Display_current_source_list__1_.rcov" NAME="@e2e: Display current source list (1) Coverage Results" MODIFIED="1612596143705" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
     <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Display_current_sources_list__2_.rcov" NAME="@e2e: Display current sources list (2) Coverage Results" MODIFIED="1612592569471" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
+    <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Invalid_parameter__2_.rcov" NAME="@e2e: Invalid parameter (2) Coverage Results" MODIFIED="1612609385719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
     <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Add_a_custom_source__then_display_the_source_list__3_.rcov" NAME="@e2e: Add a custom source, then display the source list (3) Coverage Results" MODIFIED="1612596153741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
+    <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Add_a_custom_source__with_an_invalid_url__1_.rcov" NAME="@e2e: Add a custom source, with an invalid url (1) Coverage Results" MODIFIED="1612607998363" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
+    <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Add_a_custom_source__with_a_non_git_url__1_.rcov" NAME="@e2e: Add a custom source, with a non-git url (1) Coverage Results" MODIFIED="1612608773334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
+    <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Remove_a_custom_source__missing_the_name.rcov" NAME="@e2e: Remove a custom source, missing the name Coverage Results" MODIFIED="1612605027530" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
+    <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Remove_a_custom_source__with_an_invalid_name__2_.rcov" NAME="@e2e: Remove a custom source, with an invalid name (2) Coverage Results" MODIFIED="1612607779636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
+    <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Display_current_source_list__2_.rcov" NAME="@e2e: Display current source list (2) Coverage Results" MODIFIED="1612596392720" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
+    <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Add_a_custom_source__with_a_non_git_url.rcov" NAME="@e2e: Add a custom source, with a non-git url Coverage Results" MODIFIED="1612608409031" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
+    <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Add_a_custom_source__with_an_invalid_url__4_.rcov" NAME="@e2e: Add a custom source, with an invalid url (4) Coverage Results" MODIFIED="1612608279384" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
+    <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Add_a_custom_source__then_display_the_source_list__5_.rcov" NAME="@e2e: Add a custom source, then display the source list (5) Coverage Results" MODIFIED="1612594977621" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
+    <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Remove_a_custom_source__missing_the_name__2_.rcov" NAME="@e2e: Remove a custom source, missing the name (2) Coverage Results" MODIFIED="1612605170214" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
+    <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Add_a_custom_source__then_display_the_source_list__then_remove_it__then_display_the_source_list__3_.rcov" NAME="@e2e: Add a custom source, then display the source list, then remove it, then display the source list (3) Coverage Results" MODIFIED="1612602811229" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
+    <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Display_current_sources_list_with_custom_sources_added__1_.rcov" NAME="@e2e: Display current sources list with custom sources added (1) Coverage Results" MODIFIED="1612593695914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
+    <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Display_current_sources_list_with_custom_sources_added__2_.rcov" NAME="@e2e: Display current sources list with custom sources added (2) Coverage Results" MODIFIED="1612593797669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
+    <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Remove_a_custom_source__with_an_invalid_name.rcov" NAME="@e2e: Remove a custom source, with an invalid name Coverage Results" MODIFIED="1612605429381" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
+    <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Add_a_custom_source__with_an_invalid_url.rcov" NAME="@e2e: Add a custom source, with an invalid url Coverage Results" MODIFIED="1612608319041" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
+    <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Add_a_custom_source__then_display_the_source_list__then_remove_it__then_display_the_source_list__1_.rcov" NAME="@e2e: Add a custom source, then display the source list, then remove it, then display the source list (1) Coverage Results" MODIFIED="1612602545246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
+    <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Add_a_custom_source__with_an_invalid_name.rcov" NAME="@e2e: Add a custom source, with an invalid name Coverage Results" MODIFIED="1612607844904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
+    <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Add_a_custom_source__with_an_invalid_url__2_.rcov" NAME="@e2e: Add a custom source, with an invalid url (2) Coverage Results" MODIFIED="1612608096539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
+    <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Display_current_source_list__1_.rcov" NAME="@e2e: Display current source list (1) Coverage Results" MODIFIED="1612596143705" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
+    <SUITE FILE_PATH="coverage/ruby_upm@sources_add_feature.rcov" NAME="sources_add.feature Coverage Results" MODIFIED="1612608784069" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
+    <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Remove_a_custom_source__with_an_invalid_name__1_.rcov" NAME="@e2e: Remove a custom source, with an invalid name (1) Coverage Results" MODIFIED="1612605845584" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
     <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Display_current_sources_list__1_.rcov" NAME="@e2e: Display current sources list (1) Coverage Results" MODIFIED="1612593586749" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
     <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Add_a_custom_source__then_display_the_source_list__then_remove_it__then_display_the_source_list__4_.rcov" NAME="@e2e: Add a custom source, then display the source list, then remove it, then display the source list (4) Coverage Results" MODIFIED="1612603149742" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
     <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Display_current_sources_list__3_.rcov" NAME="@e2e: Display current sources list (3) Coverage Results" MODIFIED="1612592804017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
     <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Add_a_custom_source__then_display_the_source_list__then_remove_it__then_display_the_source_list__2_.rcov" NAME="@e2e: Add a custom source, then display the source list, then remove it, then display the source list (2) Coverage Results" MODIFIED="1612602796124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
+    <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Add_a_custom_source__with_an_invalid_url__3_.rcov" NAME="@e2e: Add a custom source, with an invalid url (3) Coverage Results" MODIFIED="1612608210392" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
     <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Display_current_sources_list.rcov" NAME="@e2e: Display current sources list Coverage Results" MODIFIED="1612593837595" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
+    <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Add_a_custom_source__missing_the_name.rcov" NAME="@e2e: Add a custom source, missing the name Coverage Results" MODIFIED="1612603783418" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
     <SUITE FILE_PATH="coverage/ruby_upm@sources_list_feature.rcov" NAME="sources_list.feature Coverage Results" MODIFIED="1612593374984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
     <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Add_a_custom_source__then_display_the_source_list__1_.rcov" NAME="@e2e: Add a custom source, then display the source list (1) Coverage Results" MODIFIED="1612595217859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
+    <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Add_a_custom_source__with_an_invalid_name__1_.rcov" NAME="@e2e: Add a custom source, with an invalid name (1) Coverage Results" MODIFIED="1612608200962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
     <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Add_a_custom_source__then_display_the_source_list__4_.rcov" NAME="@e2e: Add a custom source, then display the source list (4) Coverage Results" MODIFIED="1612594849914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
     <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Display_current_source_list.rcov" NAME="@e2e: Display current source list Coverage Results" MODIFIED="1612595188326" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
-    <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Display_current_source_list__2_.rcov" NAME="@e2e: Display current source list (2) Coverage Results" MODIFIED="1612596392720" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
-    <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Add_a_custom_source__then_display_the_source_list__5_.rcov" NAME="@e2e: Add a custom source, then display the source list (5) Coverage Results" MODIFIED="1612594977621" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
-    <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Add_a_custom_source__then_display_the_source_list__then_remove_it__then_display_the_source_list__3_.rcov" NAME="@e2e: Add a custom source, then display the source list, then remove it, then display the source list (3) Coverage Results" MODIFIED="1612602811229" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
-    <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Display_current_sources_list_with_custom_sources_added__1_.rcov" NAME="@e2e: Display current sources list with custom sources added (1) Coverage Results" MODIFIED="1612593695914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
+    <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Add_a_custom_source__missing_the_url.rcov" NAME="@e2e: Add a custom source, missing the url Coverage Results" MODIFIED="1612604838469" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
+    <SUITE FILE_PATH="coverage/ruby_upm@_e2e__Invalid_parameter__3_.rcov" NAME="@e2e: Invalid parameter (3) Coverage Results" MODIFIED="1612609451669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="ruby-upm" />
   </component>
 </project>
