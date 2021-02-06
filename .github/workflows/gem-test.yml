@@ -1,0 +1,20 @@
+name: Ruby Gem
+
+on: push
+
+jobs:
+  test:
+    name: Cucumber Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Ruby 2.6
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.6.x
+
+      - name: Cucumber test
+        run: |
+          bundle install
+          bundle exec cucumber --format pretty --format html --out output/report.html
