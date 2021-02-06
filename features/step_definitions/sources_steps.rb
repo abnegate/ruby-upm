@@ -18,6 +18,10 @@ Then(/^the UPM source file should contain "([^"]*)"$/) do |content|
   step %(the file named "#{Upm::SOURCES_PATH}" should contain "#{content}")
 end
 
+Then(/^the UPM source file should not contain "([^"]*)"$/) do |content|
+  step %(the file named "#{Upm::SOURCES_PATH}" should not contain "#{content}")
+end
+
 Then(/^I wait for the output to contain the repo named "([^"]*)" with the url "([^"]*)"$/) do |name, url|
   step %(wait for the output to contain), "| #{name} | #{url}"
 end

@@ -1,7 +1,7 @@
 require "aruba/cucumber"
 
 Aruba.configure do |config|
-  config.exit_timeout = 15
+  config.exit_timeout = 20
   config.io_wait_timeout = 2
   config.activate_announcer_on_command_failure = [:output]
   config.keep_ansi = true
