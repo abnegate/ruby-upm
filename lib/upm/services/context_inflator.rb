@@ -1,5 +1,6 @@
 module Upm
-  class ContextInflater
+  # Inflates a context object for using data in other services
+  class ContextInflator
     def fill_context(context, type, tag = nil)
       package = SpecRepoManager.read_package_spec
 

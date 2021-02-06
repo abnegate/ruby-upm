@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Upm
-  # Manages syncing packages with a spec repo
+  # Manages syncing updates to and from a spec repo
   class SpecRepoSyncer
     include Upm.injected(
       :shell,

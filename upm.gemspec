@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
   spec.metadata["changelog_uri"] = "https://github.com/abnegate/ruby-upm/CHANGELOG.md"
 
   # Specify which files should be added to the gem when it is released.
-  # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
+  # The `git ls-files -z` loads the files in the RubyGem that have been added into git
   spec.files = Dir.chdir(File.expand_path(__dir__)) do
     `git ls-files -z`.split("\x0").reject { |f| f.match(%r{\A(?:test|spec|features)/}) }
   end
@@ -33,6 +33,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "dry-container", "~> 0.7.2"
   spec.add_dependency "thor", "~> 1.1.0"
   spec.add_dependency "tty-spinner", "~> 0.9.3"
+  spec.add_dependency "tty-table", "~> 0.12.0"
   spec.add_dependency "pastel", "~> 0.8.0"
   spec.add_dependency "parallel", "~> 1.20.1"
 

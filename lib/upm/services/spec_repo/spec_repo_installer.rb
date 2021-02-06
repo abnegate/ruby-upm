@@ -2,6 +2,8 @@ module Upm
   # Manages install packages from a spec repo
   class SpecRepoInstaller
     include Upm.injected(
+      :shell,
+      :progress,
       :spec_repo_syncer
     )
 
@@ -9,34 +11,43 @@ module Upm
     # @param [String] version   The version of the package to install, defaults to the latest version.
     def install(
       name,
-      version = "latest",
+      version,
       type = "all",
       repo_name = Upm::CORE_SPEC_REPO_NAME
     )
       spec_repo_syncer.sync(type)
 
-      matches = Dir.glob("#{SPEC_ROOT}/*#{name}*")
+      matches = Dir.glob("#{SPEC_ROOT}/**/*#{name}*").select { |d| Dir.exist?(d) }
+
+      index = 0
 
       if matches.empty?
         shell.error("No package found with name #{name}")
         exit(-1)
       elsif matches.size > 1
-        shell.error("Multiple matches for #{name}")
+        shell.say("Multiple matches for #{name}")
+
+        matches.each_with_index.map { |match, index| puts Shell.add_date("#{index}: #{match}\n") }
+
+        index = shell.ask(
+          "Select the index of the package you want to install:",
+          options: (0..matches.size - 1).to_a
+        )
         exit(-1)
       end
 
-      name = matches[0]
+      match = matches[index]
 
-      if version == "latest"
-        version = `ls #{SPEC_ROOT}/#{type}/#{name}`.split("\n")[0]
+      if version.nil?
+        version = `ls #{match}`.split("\n")[0]
       end
 
-      unless Dir.exist?("#{SPEC_ROOT}/#{name}/#{version}")
+      unless Dir.exist?("#{match}/#{version}")
         shell.error("No package version #{version} found for #{name}")
         exit(-1)
       end
 
-      package = read_package_spec("#{SPEC_ROOT}/#{name}/#{version}/#{Upm::SPEC_FILE_PATH}")
+      package = SpecRepoManager.read_package_spec("#{match}/#{version}/#{Upm::SPEC_FILE_PATH}")
       url = package["git"]["url"].strip
 
       if url.nil? || url.empty?
@@ -68,11 +79,15 @@ module Upm
       end
     end
 
-    def clone_to_project(url, version, path = ".")
+    def clone_to_project(url, version, path = "upm")
+      shell.header("Installing dependency")
       progress.start("Cloning package into project") do
-        result = system("git clone #{url} --branch=#{version} #{path} &> /dev/null")
-        next Result.failure("Clone failure") unless result
-        next Result.success
+        FileUtils.mkdir_p(path)
+        Dir.chdir(path) do
+          result = system("git clone #{url} --quiet --branch=#{version} &> /dev/null")
+          next Result.failure("Clone failure") unless result
+          next Result.success
+        end
       end
     end
   end

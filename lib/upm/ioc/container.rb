@@ -6,7 +6,8 @@ require "dry-auto_inject"
 module Upm
   container = Dry::Container.new
   container.register(:context, -> { Context.new })
-  container.register(:context_inflater, -> { ContextInflater.new })
+  container.register(:context_inflator, -> { ContextInflator.new })
+  container.register(:table_viewer, -> { TableViewer.new })
   container.register(:project_manager, -> { ProjectManager.new })
   container.register(:file_manager, -> { FileManager.new })
   container.register(:spec_repo_manager, -> { SpecRepoManager.new })

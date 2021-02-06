@@ -4,6 +4,7 @@ require "upm/services/file_manager"
 require "upm/services/template_writer"
 
 module Upm
+  # Manages a project object
   class ProjectManager
     include Upm.injected(
       :context,

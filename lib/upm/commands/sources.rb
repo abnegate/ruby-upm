@@ -30,16 +30,16 @@ module Upm
     end
 
     desc "remove", "Remove a spec repo"
-    option :name, aliases: "-n", required: true, desc: "The repo name to remove"
-    def remove
+    def remove(name)
       spec_repo_manager.remove_source(
-        options[:repo_name]
+        name
       )
       spec_repo_manager.sync("all")
     end
 
     map(
       "s" => "sync",
+      "l" => "list",
       "a" => "add",
       "r" => "remove"
     )

@@ -37,8 +37,8 @@ module Upm
     end
 
     desc "push", "Publish the current package"
-    option :type, aliases: "-t",  enum: Upm::SUPPORTED_TYPES, default: "unity", desc: "The type of package to release"
-    option :tag, aliases: "-t", default: nil, desc: "The git tag to match this release"
+    option :type, aliases: "-t", enum: Upm::SUPPORTED_TYPES, default: "unity", desc: "The type of package to release"
+    option :tag, aliases: "-t", default: nil, desc: "The git tag to match this release, defaults to the current version"
     option :repo_name, aliases: "-n", default: Upm::CORE_SPEC_REPO_NAME, desc: "The repo name to push to, defaults to core"
     def push
       spec_repo_manager.push(
@@ -57,7 +57,7 @@ module Upm
     # end
 
     desc "install", "Install a package in the current directory"
-    option :version, aliases: "-v", default: "latest", desc: "The version to install"
+    option :version, aliases: "-v", desc: "The version to install"
     def install(name)
       spec_repo_manager.install(
         name,

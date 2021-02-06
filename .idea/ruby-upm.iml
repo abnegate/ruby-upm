@@ -48,11 +48,16 @@
     <orderEntry type="library" scope="PROVIDED" name="rubocop (v0.93.1, RVM: ruby-2.7.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubocop-ast (v1.4.1, RVM: ruby-2.7.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ruby-progressbar (v1.11.0, RVM: ruby-2.7.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="strings (v0.2.0, RVM: ruby-2.7.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="strings-ansi (v0.2.0, RVM: ruby-2.7.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thor (v1.1.0, RVM: ruby-2.7.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tty-color (v0.6.0, RVM: ruby-2.7.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tty-cursor (v0.7.1, RVM: ruby-2.7.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="tty-screen (v0.8.1, RVM: ruby-2.7.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tty-spinner (v0.9.3, RVM: ruby-2.7.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="tty-table (v0.12.0, RVM: ruby-2.7.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="unicode-display_width (v1.7.0, RVM: ruby-2.7.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="unicode_utils (v1.4.0, RVM: ruby-2.7.1) [gem]" level="application" />
   </component>
   <component name="RModuleSettingsStorage">
     <LOAD_PATH number="1" string0="$MODULE_DIR$/lib" />

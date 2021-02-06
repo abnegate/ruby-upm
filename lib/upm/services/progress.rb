@@ -4,6 +4,7 @@ require "tty-spinner"
 require "pastel"
 
 module Upm
+  # Manages progress UI
   class Progress
     PASTEL = Pastel.new
 

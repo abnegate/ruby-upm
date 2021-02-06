@@ -3,6 +3,7 @@
 require "json"
 
 module Upm
+  # Manages a local UPM environment
   class SpecRepoManager
     include Upm.injected(
       :context,

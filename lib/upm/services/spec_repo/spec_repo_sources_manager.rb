@@ -4,26 +4,25 @@ require "fileutils"
 require "parallel"
 
 module Upm
+  # Manages spec repo sources
   class SpecRepoSourcesManager
     include Upm.injected(
+      :table_viewer,
       :progress,
       :shell
     )
 
     def [](name)
-      if @sources.nil?
-        load
-      end
+      load if @sources.nil?
+
       @sources[name]
     end
 
     def []=(name, url)
-      if @sources.nil?
-        load
-      end
+      load if @sources.nil?
 
       if url.nil?
-        @sources = @sources.tap { |h| h.delete(name) }
+        @sources.delete(name)
       else
         @sources[name] = url
       end
@@ -47,7 +46,13 @@ module Upm
     end
 
     def list
+      load if @sources.nil?
 
+      table_viewer.render(
+        "Registered spec source repos",
+        ["Name", "Url"],
+        @sources.flat_map { |name, url| [name, url] }
+      )
     end
 
     private
@@ -76,6 +81,7 @@ module Upm
         sources_text += "#{name}=#{url}\n"
       end
 
+      FileUtils.mkdir_p(File.dirname(Upm::SOURCES_PATH))
       File.write(Upm::SOURCES_PATH, sources_text)
     end
   end

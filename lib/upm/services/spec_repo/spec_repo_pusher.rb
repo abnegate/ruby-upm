@@ -5,7 +5,7 @@ module Upm
       :shell,
       :progress,
       :context,
-      :context_inflater,
+      :context_inflator,
       :spec_repo_syncer,
       :spec_repo_sources_manager
     )
@@ -34,9 +34,11 @@ module Upm
       end
 
       progress.start("Inflating context") do
-        context_inflater.fill_context(context, type, tag)
+        context_inflator.fill_context(context, type, tag)
         next Result.success
       end
+
+      shell.say("Inflated successfully!")
 
       shell.header("Publish package")
 
@@ -108,7 +110,7 @@ module Upm
         result = system("git add #{context.project.name}/#{version}/#{Upm::SPEC_FILE_PATH} > /dev/null")
         next Result.failure("Spec repo add file error") unless result
 
-        result = system("git commit -m \"[Add] #{context.project.name} #{version}\" &> /dev/null")
+        result = system("git commit -m \"[Add] #{context.project.name} #{version}\" > /dev/null")
         next Result.failure("Spec repo commit error") unless result
 
         next Result.success
@@ -120,7 +122,7 @@ module Upm
       end
 
       progress.start("Uploading new version") do
-        result = system("git push --set-upstream #{spec_repo_sources_manager[repo_name]} main")
+        result = system("git push --set-upstream origin main --quiet > /dev/null")
         next Result.failure("Spec repo push error") unless result
 
         next Result.success

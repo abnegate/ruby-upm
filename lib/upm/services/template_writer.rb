@@ -5,6 +5,7 @@ require "ostruct"
 require "upm/services/assets"
 
 module Upm
+  # Manages inflating ERB templates
   class TemplateWriter
     include Upm.injected(:assets)
     include ERB::Util

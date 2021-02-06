@@ -3,7 +3,7 @@ module Upm
   class SpecRepoDeleter
     include Upm.injected(
       :context,
-      :context_inflater,
+      :context_inflator,
       :spec_repo_syncer
     )
 
@@ -12,7 +12,7 @@ module Upm
     def delete(type, version)
       spec_repo_syncer.sync(type)
 
-      context_inflater.fill_context(context, type)
+      context_inflator.fill_context(context, type)
 
       unless File.exist?("#{ENV["HOME"]}/.upm/packages/#{context.project.name}/#{version}")
         shell.error("Version to delete not found!")
