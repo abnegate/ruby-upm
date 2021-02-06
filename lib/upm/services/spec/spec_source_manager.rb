@@ -18,8 +18,56 @@ module Upm
       @sources[name]
     end
 
+    def add(name, url)
+      load if @sources.nil?
+
+      if url.nil? || url.empty?
+        shell.error("URL missing")
+        exit(-1)
+      end
+      if name.nil? || name.empty?
+        shell.error("Name missing")
+        exit(-1)
+      end
+      if name == Upm::CORE_SPEC_REPO_NAME && url != Upm::CORE_SPEC_REPO_URL
+        shell.error("Cannot change the core url spec url via this method, set Upm::CORE_SPEC_REPO_URL directly")
+        exit(-1)
+      end
+      if name != Upm::CORE_SPEC_REPO_NAME && url == Upm::CORE_SPEC_REPO_URL
+        shell.error("Cannot add the core spec repo url under a different name")
+        exit(-1)
+      end
+      unless system("git ls-remote #{url}")
+        shell.error("URL is not a git repository")
+        exit(-1)
+      end
+
+      self[name] = url
+    end
+
+    def remove(name)
+      load if @sources.nil?
+
+      if name == Upm::CORE_SPEC_REPO_NAME
+        shell.error("Cannot remove core repo")
+        exit(-1)
+      end
+      if name.nil? ||
+        @sources[name].nil?
+        shell.error("Source not found to remove")
+        exit(-1)
+      end
+
+      self[name] = nil
+    end
+
     def []=(name, url)
       load if @sources.nil?
+
+      if name.nil? || name.empty?
+        shell.error("Name missing")
+        exit(-1)
+      end
 
       if url.nil?
         @sources.delete(name)
@@ -61,10 +109,10 @@ module Upm
       @sources = {}
 
       sources = begin
-                  File.read(Upm::SOURCES_PATH)
-                rescue Errno::ENOENT
-                  "#{Upm::CORE_SPEC_REPO_NAME}=#{Upm::CORE_SPEC_REPO_URL}"
-                end
+        File.read(Upm::SOURCES_PATH)
+      rescue Errno::ENOENT
+        "#{Upm::CORE_SPEC_REPO_NAME}=#{Upm::CORE_SPEC_REPO_URL}"
+      end
 
       sources.each_line do |line|
         parts = line.split("=")

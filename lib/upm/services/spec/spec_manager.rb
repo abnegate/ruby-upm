@@ -22,11 +22,11 @@ module Upm
     end
 
     def add_source(repo_name, repo_url)
-      spec_source_manager[repo_name] = repo_url
+      spec_source_manager.add(repo_name, repo_url)
     end
 
     def remove_source(repo_name)
-      spec_source_manager[repo_name] = nil
+      spec_source_manager.remove(repo_name)
     end
 
     def sync(type)

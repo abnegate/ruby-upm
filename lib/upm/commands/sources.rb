@@ -5,8 +5,8 @@ module Upm
       :spec_source_manager
     )
 
-    desc "sync", "Sync with repo"
-    option :type, aliases: "-t", enum: Upm::SUPPORTED_TYPES, default: nil, desc: "The type of package to sync, or all if not defined"
+    desc "sync", "Sync with all spec repos"
+    option :type, aliases: "-t", enum: Upm::SUPPORTED_TYPES, desc: "The type of package to sync, or all if not defined"
     def sync
       spec_manager.sync(options[:type])
     end
@@ -18,8 +18,8 @@ module Upm
     end
 
     desc "add", "Add a spec repo"
-    option :url, aliases: "-u", default: Upm::CORE_SPEC_REPO_URL, desc: "The repo url to sync"
-    option :name, aliases: "-n", default: Upm::CORE_SPEC_REPO_NAME, desc: "The repo name to sync"
+    option :name, aliases: "-n", desc: "The spec repo name to add"
+    option :url, aliases: "-u", desc: "The spec repo url to add"
     def add
       spec_manager.add_source(options[:name], options[:url])
       spec_manager.sync("all")
