@@ -14,19 +14,28 @@ module Upm
       :spec_deleter,
       :spec_installer,
       :spec_restorer,
-      :spec_source_manager
+      :spec_source_manager,
+      :spec_package_manager
     )
 
     def list_sources
+      sync("all")
       spec_source_manager.list
+    end
+
+    def list_packages(type, repo_name, is_local)
+      sync(type)
+      spec_package_manager.list(type, repo_name, is_local)
     end
 
     def add_source(repo_name, repo_url)
       spec_source_manager.add(repo_name, repo_url)
+      sync("all")
     end
 
     def remove_source(repo_name)
       spec_source_manager.remove(repo_name)
+      sync("all")
     end
 
     def sync(type)

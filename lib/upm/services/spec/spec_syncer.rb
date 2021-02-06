@@ -13,6 +13,8 @@ module Upm
     def sync(type)
       shell.header("Check for updates")
 
+      type = "all" if type.nil?
+
       FileUtils.mkdir_p(Upm::UPM_ROOT)
 
       spec_source_manager[Upm::CORE_SPEC_REPO_NAME] = Upm::CORE_SPEC_REPO_URL
@@ -42,6 +44,7 @@ module Upm
       spec_root
     )
       FileUtils.mkdir_p(spec_root)
+
       Dir.chdir(spec_root) do
         system("git init . > /dev/null")
         system("git checkout -b main --quiet > /dev/null")

@@ -14,7 +14,7 @@ module Upm
 
       context_inflator.fill_context(context, type)
 
-      unless File.exist?("#{ENV["HOME"]}/.upm/packages/#{context.project.name}/#{version}")
+      unless File.exist?("#{Upm::SPEC_ROOT}/#{type}/#{context.project.name}/#{version}")
         shell.error("Version to delete not found!")
         exit(-1)
       end

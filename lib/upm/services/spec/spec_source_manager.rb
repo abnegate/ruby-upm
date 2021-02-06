@@ -53,7 +53,7 @@ module Upm
         exit(-1)
       end
       if name.nil? ||
-        @sources[name].nil?
+          @sources[name].nil?
         shell.error("Source not found to remove")
         exit(-1)
       end

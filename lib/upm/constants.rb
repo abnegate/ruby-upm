@@ -7,6 +7,7 @@ module Upm
 
   UPM_ROOT = "#{ENV["HOME"]}/.upm"
   SPEC_ROOT = "#{UPM_ROOT}/packages"
+  LOCAL_PACKAGES_ROOT = "upm_packages"
   SOURCES_PATH = "#{UPM_ROOT}/sources"
   SPEC_FILE_PATH = "upmspec.json"
 
