@@ -69,7 +69,7 @@ GEM
     rake (13.0.3)
     rchardet (1.8.0)
     regexp_parser (2.0.3)
-    rexml (3.2.4)
+    rexml (3.2.5)
     rspec (3.10.0)
       rspec-core (~> 3.10.0)
       rspec-expectations (~> 3.10.0)
@@ -106,6 +106,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-19
+  x86_64-linux
 
 DEPENDENCIES
   aruba (~> 0.14.14)
