@@ -4,7 +4,7 @@ PATH
     upm (0.1.0)
       dry-auto_inject (~> 0.7.0)
       dry-container (~> 0.7.2)
-      git (~> 1.8.1)
+      git (>= 1.8.1, < 1.19.0)
       parallel (~> 1.20.1)
       pastel (~> 0.8.0)
       terminal-table (~> 1.8.0)
@@ -14,6 +14,8 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
+    addressable (2.8.4)
+      public_suffix (>= 2.0.2, < 6.0)
     aruba (0.14.14)
       childprocess (>= 0.6.3, < 4.0.0)
       contracts (~> 0.9)
@@ -56,7 +58,8 @@ GEM
       concurrent-ruby (~> 1.0)
     ffi (1.14.2)
     gherkin (5.1.0)
-    git (1.8.1)
+    git (1.18.0)
+      addressable (~> 2.8)
       rchardet (~> 1.8)
     multi_json (1.15.0)
     multi_test (0.1.2)
@@ -65,6 +68,7 @@ GEM
       ast (~> 2.4.1)
     pastel (0.8.0)
       tty-color (~> 0.5)
+    public_suffix (4.0.7)
     rainbow (3.0.0)
     rake (13.0.3)
     rchardet (1.8.0)
